@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:03:52 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:59 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/20 18:03:47 by cmarques          #+#    #+#             */
+/*   Updated: 2026/04/20 18:09:20 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int	ft_strlen(char *str)
+int	ft_isprint(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

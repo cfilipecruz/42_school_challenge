@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:03:52 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:59 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/20 21:10:57 by cmarques          #+#    #+#             */
+/*   Updated: 2026/04/24 18:26:39 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int	ft_strlen(char *str)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (str[i])
+	if (little[i] == '\0')
 	{
+		return ((char *)big);
+	}
+	while (big[i] != '\0' && i < len)
+	{
+		j = 0;
+		while (big[i + j] == little[j] && little[j] != '\0' && i + j < len)
+		{
+			j++;
+		}
+		if (little[j] == '\0')
+		{
+			return ((char *)&big[i]);
+		}
 		i++;
 	}
-	return (i);
+	return (NULL);
 }

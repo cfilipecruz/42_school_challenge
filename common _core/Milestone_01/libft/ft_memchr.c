@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:03:52 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:59 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/24 20:05:46 by cmarques          #+#    #+#             */
+/*   Updated: 2026/04/25 18:22:48 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
-int	ft_strlen(char *str)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	const char	*str;
 
-	i = 0;
-	while (str[i])
+	str = (const char *)s;
+	while (n != 0)
 	{
-		i++;
+		if (*str == (unsigned char)c)
+			return ((char *)str);
+		str++;
+		n--;
 	}
-	return (i);
+	if (*str == (unsigned char)c)
+		return ((unsigned char *)str);
+	return (NULL);
 }

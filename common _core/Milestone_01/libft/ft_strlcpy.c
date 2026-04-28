@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcopy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:03:52 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:59 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/20 20:50:56 by cmarques          #+#    #+#             */
+/*   Updated: 2026/04/20 20:51:39 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int	ft_strlen(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i])
+	if (size == 0)
 	{
-		i++;
+		while (src[i] != '\0')
+		{
+			i = i + 1;
+		}
+		return (i);
+	}
+	while (src[i] != '\0' && i < size - 1)
+	{
+		dest[i] = src[i];
+		i = i + 1;
+	}
+	if (size != 0)
+	{
+		dest[i] = '\0';
+	}
+	while (src[i] != '\0')
+	{
+		i = i + 1;
 	}
 	return (i);
 }

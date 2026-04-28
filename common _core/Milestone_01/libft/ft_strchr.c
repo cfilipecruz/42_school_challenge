@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:03:52 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:59 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/20 19:47:31 by cmarques          #+#    #+#             */
+/*   Updated: 2026/04/25 15:26:47 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str)
+char	*ft_strchr(const char *str, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		i++;
+		if (*str == (char)c)
+			return ((char *)str);
+		str++;
 	}
-	return (i);
+	if (*str == (char)c)
+		return ((char *)str);
+	return (NULL);
 }

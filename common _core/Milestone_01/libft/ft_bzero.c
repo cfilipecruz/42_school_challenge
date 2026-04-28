@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:03:52 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:59 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/20 18:03:36 by cmarques          #+#    #+#             */
+/*   Updated: 2026/04/20 19:16:42 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
-int	ft_strlen(char *str)
+void	ft_bzero(void *p, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (i < size)
 	{
-		i++;
+		((unsigned char *)p)[i] = 0;
+		i += 1;
 	}
-	return (i);
 }

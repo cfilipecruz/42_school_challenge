@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:03:52 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:59 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/20 21:08:10 by cmarques          #+#    #+#             */
+/*   Updated: 2026/04/20 21:08:11 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int	ft_strlen(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i])
+	if (n == 0)
 	{
+		return (0);
+	}
+	while (i < n && s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (i);
+	if (i == n)
+	{
+		return (0);
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
