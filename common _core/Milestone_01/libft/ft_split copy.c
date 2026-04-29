@@ -6,14 +6,13 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 19:22:22 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/29 14:50:08 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/04/29 18:14:17 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
-int	countwords(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	words;
 	int	i;
@@ -23,57 +22,85 @@ int	countwords(char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
-		{
 			i++;
-		}
 		if (s[i] && s[i] != c)
 		{
 			words++;
 			while (s[i] && s[i] != c)
-			{
 				i++;
-			}
 		}
+	}
+	return (words);
+}
+
+static int	count_letters(char const *s, char c, int p)
+{
+	int	count;
+
+	count = 0;
+	while (s[p] && s[p] != c)
+	{
+		count++;
+		p++;
+	}
+	return (count);
+}
+
+static char	*get_words(char const *s, int p, int len)
+{
+	int		i;
+	char	*word;
+
+	i = 0;
+	word = malloc((len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = s[i + p];
 		i++;
 	}
-	printf("%i", words);
-	return (words);
+	word[i] = '\0';
+	return (word);
+}
+
+static void	*free_memory(char **words, int j)
+{
+	while (j >= 0)
+	{
+		free(words[j]);
+		j--;
+	}
+	free(words);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**words;
 	int		i;
 	int		nw;
-	int		nl;
+	char	**words;
+	int		len;
+	int		j;
 
-	(void)s;
-	(void)c;
-	nw = countwords(s, c);
-	nl = countletters();
+	nw = count_words(s, c);
+	words = (char **)malloc((nw + 1) * sizeof(char *));
+	if (!words)
+		return (NULL);
 	i = 0;
-	while (nw > 0)
+	j = 0;
+	while (nw > j)
 	{
-		words = malloc(sizeof(char));
-		while (nl > 0)
-		{
-			words[i] = malloc(sizeof(char));
+		while (s[i] && s[i] == c)
 			i++;
-		}
+		len = count_letters(s, c, i);
+		words[j] = get_words(s, i, len);
+		if (!words[j])
+			return (free_memory(words, j - 1));
+		i += len;
+		j++;
 	}
-	return (NULL);
-}
-
-int	main(void)
-{
-	char **result;
-	int i;
-
-	i = 0;
-	result = ft_split("Ola mundo exterior", ' ');
-	while (result[i] != NULL)
-	{
-		printf("%d", result[i]);
-		i++;
-	}
+	words[j] = NULL;
+	return (words);
 }
