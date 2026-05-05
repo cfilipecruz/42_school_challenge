@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 19:36:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/04 16:58:40 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 18:03:52 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!new)
+		return ;
 	new->next = *lst;
 	*lst = new;
 }

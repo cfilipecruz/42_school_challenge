@@ -6,18 +6,18 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 18:03:52 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:59 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:44:51 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
 		i++;
 	}

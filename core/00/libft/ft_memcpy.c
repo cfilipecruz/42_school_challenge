@@ -6,11 +6,11 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:56:22 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/25 19:20:52 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:44:12 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

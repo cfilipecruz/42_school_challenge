@@ -6,12 +6,11 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 13:21:47 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/01 17:22:11 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 18:22:01 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int	count_numbers(long int n)
 {
@@ -19,9 +18,7 @@ static int	count_numbers(long int n)
 
 	i = 0;
 	if (n == 0)
-	{
 		return (1);
-	}
 	while (n > 0)
 	{
 		n = n / 10;
@@ -41,9 +38,7 @@ static char	*write_string(long int n, int len, int s)
 		return (NULL);
 	new_string[len] = '\0';
 	if (s == 1)
-	{
 		new_string[0] = '-';
-	}
 	while (i > s)
 	{
 		i--;

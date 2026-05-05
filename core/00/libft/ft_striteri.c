@@ -6,14 +6,13 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 18:16:40 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/29 18:24:40 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:44:39 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
-	char			*c;
 
 	i = 0;
 	while (s[i])

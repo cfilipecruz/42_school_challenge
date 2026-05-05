@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 17:00:13 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/04 17:04:39 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:44:04 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
+	i = 0;
 	while (lst)
 	{
 		i++;

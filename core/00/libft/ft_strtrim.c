@@ -6,11 +6,11 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:50:12 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/01 18:33:21 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:45:06 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	checkchar(char c, const char *set)
 {
@@ -50,4 +50,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res[i] = '\0';
 	return (res);
 }
-

@@ -6,17 +6,17 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 18:27:23 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/25 16:00:16 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:45:03 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 
-	i = strlen(s);
+	i = ft_strlen(s);
 	if (c == '\0')
 		return ((char *)&s[i]);
 	while (i >= 0)
@@ -29,4 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-

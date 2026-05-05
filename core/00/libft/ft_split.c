@@ -6,11 +6,11 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 19:22:22 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/29 18:14:17 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:44:32 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	count_words(char const *s, char c)
 {

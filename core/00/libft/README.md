@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by cmarques.*
+_This project has been created as part of the 42 curriculum by cmarques_
 
 # 📚 Libft
 
@@ -48,7 +48,7 @@ Include the header file in your project:
 Compile your program with the library:
 
 ```bash
-cc main.c -L. -lft
+cc main.c libft.a
 ```
 
 ---
@@ -119,8 +119,6 @@ typedef struct s_list
 ## 📚 Resources
 
 ### 📖 Documentation & References
-
-* The C Programming Language — Brian W. Kernighan & Dennis M. Ritchie
 * man pages (`man malloc`, `man write`, etc.)
 * GNU C Library documentation
 * 42 intra subject and guidelines
@@ -133,17 +131,8 @@ AI tools (such as ChatGPT) were used during this project for:
 
 * Clarifying concepts (e.g., pointers, linked lists, memory allocation)
 * Debugging specific issues and understanding edge cases
-* Reviewing code for Norminette compliance and logic errors
 
 All implementations were written and understood by the author, with AI serving as a learning aid rather than a source of direct solutions.
-
----
-
-## 🎯 Purpose
-
-This project serves as a base for future development in the 42 curriculum, providing a custom-built standard library that will be reused in upcoming projects such as `get_next_line`, `ft_printf`, and others.
-
----
 
 ## 👨‍💻 Author
 

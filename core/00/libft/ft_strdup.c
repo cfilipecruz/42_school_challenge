@@ -6,11 +6,11 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 16:08:37 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/28 19:20:29 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:44:36 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

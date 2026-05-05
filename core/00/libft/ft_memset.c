@@ -6,11 +6,11 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 18:03:50 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/20 19:14:06 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:44:18 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *p, int c, size_t size)
 {

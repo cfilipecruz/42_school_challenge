@@ -6,11 +6,11 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 21:07:05 by cmarques          #+#    #+#             */
-/*   Updated: 2026/04/20 21:07:07 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/05 17:43:06 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	skip_whitespaces(char *atr)
+static int	skip_whitespaces(char *atr)
 {
 	int	counter;
 
@@ -23,7 +23,7 @@ int	skip_whitespaces(char *atr)
 	return (counter);
 }
 
-int	count(char *atr, int *counter)
+static int	count(char *atr, int *counter)
 {
 	int	sign;
 
