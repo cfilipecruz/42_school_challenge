@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putpoint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 16:05:28 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/13 15:37:04 by cmarques         ###   ########.fr       */
+/*   Created: 2026/05/13 15:29:15 by cmarques          #+#    #+#             */
+/*   Updated: 2026/05/13 15:46:12 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+int	ft_putpoint(char *p)
+{
+	int	i;
 
-int		ft_printf(const char *, ...);
-int		ft_putchar(int c);
-int		ft_putstr(char *s);
-int		ft_putpoint(char *p);
-int		main(void);
-
-size_t	ft_strlen(const char *s);
-
-#endif
+	i = 0;
+	(void)p;
+	/* 	if ()
+		{
+			ft_putchar();
+		} */
+    return(i);
+}
