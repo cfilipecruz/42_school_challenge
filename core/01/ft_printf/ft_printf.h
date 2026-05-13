@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 16:05:28 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/13 15:37:04 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/13 16:35:05 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int		ft_printf(const char *, ...);
 int		ft_putchar(int c);
 int		ft_putstr(char *s);
-int		ft_putpoint(char *p);
+int		ft_putpoint(void *p);
 int		main(void);
 
 size_t	ft_strlen(const char *s);

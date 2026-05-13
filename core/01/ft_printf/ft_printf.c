@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:58:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/13 15:56:44 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/13 16:01:32 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_handleformats(char format, va_list args)
 {
-	int		total;
-	
+	int	total;
+
 	total = 0;
 	if (format == '%')
 		total = total + ft_putchar('%');
