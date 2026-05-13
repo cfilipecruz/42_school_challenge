@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:58:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/12 19:25:47 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/13 14:57:55 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ int	ft_printf(const char *format, ...)
 int	main(void)
 {
 
+	/* =============== Testing ++%++ =============== */
+	char char_percent;
+
+	ft_printf("%%");
+	printf("%%");
+	
 	/* =============== Testing ++c++ =============== */
 	/* char	char_a;
 	char	char_b;
