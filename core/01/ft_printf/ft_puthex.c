@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpoint.c                                      :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 15:29:15 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/14 18:52:27 by cmarques         ###   ########.fr       */
+/*   Created: 2026/05/14 18:35:23 by cmarques          #+#    #+#             */
+/*   Updated: 2026/05/14 18:50:44 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putpointhex(unsigned long p)
+int	ft_puthex(unsigned int p, char format)
 {
-	int				count;
+	int		count;
+	char	base;
 
 	count = 0;
+	if (format == 'x')
+		base = 'a';
+	else
+		base = 'A';
 	if (p >= 16)
-		count += ft_putpointhex(p / 16);
+		count += ft_puthex(p / 16, format);
 	if (p % 16 < 10)
 		count += ft_putchar('0' + (p % 16));
 	else
-		count += ft_putchar('a' + (p % 16 - 10));
-	return (count);
-}
-
-int	ft_putpoint(void *pointer)
-{
-	int	count;
-
-	count = 0;
-	count += ft_putstr("0x");
-	count += ft_putpointhex((unsigned long)pointer);
+		count += ft_putchar(base + (p % 16 - 10));
 	return (count);
 }

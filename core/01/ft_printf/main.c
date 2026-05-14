@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:23:08 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/14 18:05:51 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/14 18:37:42 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(void)
 
 	/* =============== Testing ++d && i++ =============== */
 	
-	/* int i_1;
+/* 	int i_1;
 	int i_2;
 	int d_1;
 	int d_2;
@@ -76,12 +76,12 @@ int	main(void)
 
 	printf("\n-----------\n");
 	ft_printf("Olá %i %i %d %d teste\n", i_1, i_2, d_1, d_2);
-	printf("Olá %i %i %d %d teste\n", i_1, i_2, d_1, d_2);
-	 */
+	printf("Olá %i %i %d %d teste\n", i_1, i_2, d_1, d_2); */
+	
 
 	 /* =============== Testing ++u++ =============== */
 	 
-/* 	unsigned u_1;
+/*  	unsigned u_1;
 	unsigned u_2;
 	unsigned u_3;
 
@@ -95,14 +95,13 @@ int	main(void)
 	printf("Olá %u %u %u teste\n", u_1, u_2, u_3);
 	 */
 
-
 	/* =============== Testing ++u++ =============== */
-	unsigned x_1;
-	unsigned x_2;
-	unsigned x_3;
-	unsigned X_1;
-	unsigned X_2;
-	unsigned X_3;
+	unsigned int x_1;
+	unsigned int x_2;
+	unsigned int x_3;
+	unsigned int X_1;
+	unsigned int X_2;
+	unsigned int X_3;
 
 	x_1 = 10;
 	x_2 = 0;

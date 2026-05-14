@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:58:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/14 17:55:50 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/14 18:54:39 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,15 @@ static int	ft_handleformats(char format, va_list args)
 	else if (format == 's')
 		total = total + ft_putstr((char *)va_arg(args, char *));
 	else if (format == 'p')
-		total = total + ft_putpoint((char *)va_arg(args, char *));
+		total = total + ft_putpoint((char *)va_arg(args, void *));
 	else if(format == 'd' || format == 'i')
 		total = total + ft_putnbr(va_arg(args, int));
 	else if(format == 'u')
 		total = total + ft_putnbr_u(va_arg(args,unsigned int));
+	else if(format == 'x')
+		total = total + ft_puthex(va_arg(args,unsigned int), 'x');
+	else if(format == 'X')
+		total = total + ft_puthex(va_arg(args,unsigned int), 'X');
 	return (total);
 }
 
