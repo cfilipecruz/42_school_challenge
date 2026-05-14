@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpoint.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 15:29:15 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/14 18:11:12 by cmarques         ###   ########.fr       */
+/*   Created: 2026/05/14 17:03:58 by cmarques          #+#    #+#             */
+/*   Updated: 2026/05/14 17:58:05 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putpoint_rec(unsigned long p)
+int	ft_putnbr_u(unsigned int u)
 {
-	int	count;
+	unsigned int	i;
 
-	count = 0;
-	if (p >= 16)
-		count += ft_putpoint_rec(p / 16);
-	if (p % 16 < 10)
-		count += ft_putchar('0' + (p % 16));
-	else
-		count += ft_putchar('a' + (p % 16 - 10));
-	return (count);
-}
-
-int	ft_putpoint(void *pointer)
-{
-	int	count;
-
-	count = 0;
-	count += ft_putstr("0x");
-	count += ft_putpoint_rec((unsigned long)pointer);
-	return (count);
+	i = 0;
+	if (u > 9)
+		i += ft_putnbr_u(u / 10);
+	ft_putchar((u % 10) + '0');
+	i++;
+	return (i);
 }

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpoint.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 15:29:15 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/14 18:11:12 by cmarques         ###   ########.fr       */
+/*   Created: 2026/05/14 16:26:41 by cmarques          #+#    #+#             */
+/*   Updated: 2026/05/14 17:58:12 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putpoint_rec(unsigned long p)
+int	ft_putnbr(int n)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	if (p >= 16)
-		count += ft_putpoint_rec(p / 16);
-	if (p % 16 < 10)
-		count += ft_putchar('0' + (p % 16));
-	else
-		count += ft_putchar('a' + (p % 16 - 10));
-	return (count);
-}
-
-int	ft_putpoint(void *pointer)
-{
-	int	count;
-
-	count = 0;
-	count += ft_putstr("0x");
-	count += ft_putpoint_rec((unsigned long)pointer);
-	return (count);
+	i = 0;
+	if (n == -2147483648)
+	{
+		i = 11;
+		write(1, "-2147483648", 11);
+		return (i);
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		i += ft_putnbr(n / 10);
+	ft_putchar((n % 10) + '0');
+	i++;
+	return (i);
 }
