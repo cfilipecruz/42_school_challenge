@@ -1,13 +1,32 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/05/14 18:55:36 by cmarques          #+#    #+#              #
-#    Updated: 2026/05/14 18:56:12 by cmarques         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = libftprintf.a
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
-NAME = ft_printf.c
+SRC = ft_printf.c \
+      ft_putchar.c \
+      ft_putstr.c \
+      ft_putpoint.c \
+      ft_putnbr.c \
+      ft_putnbr_u.c \
+      ft_puthex.c \
+      ft_strlen.c
+
+OBJ = $(SRC:.c=.o)
+
+all: $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

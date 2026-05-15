@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 19:03:40 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/12 19:10:02 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:58:26 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_putstr(char *s)
 {
 	int	i;
 
+	if (!s)
+		return (write(1, "(null)", 6));
 	i = 0;
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:29:15 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/14 18:52:27 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/15 12:03:36 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_putpointhex(unsigned long p)
 {
-	int				count;
+	int	count;
 
 	count = 0;
 	if (p >= 16)
@@ -30,6 +30,8 @@ int	ft_putpoint(void *pointer)
 {
 	int	count;
 
+	if (!pointer)
+		return (write(1, "(nil)", 5));
 	count = 0;
 	count += ft_putstr("0x");
 	count += ft_putpointhex((unsigned long)pointer);
