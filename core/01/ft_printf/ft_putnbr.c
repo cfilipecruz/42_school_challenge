@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:26:41 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/14 17:58:12 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/05/15 15:11:29 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ int	ft_putnbr(int n)
 	}
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		i += ft_putchar('-');
 		n = -n;
 	}
 	if (n >= 10)
 		i += ft_putnbr(n / 10);
-	ft_putchar((n % 10) + '0');
-	i++;
+	i += ft_putchar((n % 10) + '0');
 	return (i);
 }
