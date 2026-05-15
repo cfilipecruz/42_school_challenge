@@ -121,8 +121,8 @@ AI tools were used to:
 - clarify parsing logic
 - debug edge cases
 - improve documentation
-
-All code was written and understood manually.
+- increase test cases
+- improve information
 
 ---
 
